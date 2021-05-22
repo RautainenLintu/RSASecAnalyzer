@@ -477,9 +477,8 @@ while True:
                 break
             suitable_primes.append(prime)
         print("List of possible prime numbers is downloaded.")
-
+        report = open("report.txt", "w")
         while True:
-            report = open("report.txt", "w")
             e, N, d = generate_keys(suitable_primes)
             if time_p1 != 0:
                 p, q, d_retrieved = p_minus_1_pollard(e, N, time_p1, report)
@@ -511,7 +510,7 @@ while True:
                     print("Iterative factorization method successful")
                     print("Weak key generated. (e, N), d = ", e, N, d)
                     break
-            report.close()
+        report.close()
     print()
     print("Program finished")
     print("Press Enter to restart")
